@@ -1,0 +1,105 @@
+body {
+    background-color: rgb(0, 255, 0);
+    background-image: url(https://picsum.photos/200/300);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/***** Navegador *****/  
+
+.containerNav {
+    border-bottom: solid 2px black;
+    background-color: rgb(0, 128, 187);
+}
+
+.navegador {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    text-align: left;
+}
+
+.navegador h1 {
+    margin-left: 20px;
+    line-height: 50%;
+}
+
+.navegador a {
+    color: black;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 300%;
+}
+
+.navegador a:hover{
+    background-color: rgb(0, 140, 255);
+    border: solid .2px rgb(0, 172, 172);
+    border-bottom: solid 2px black;
+}
+
+/***** End Navegador *****/
+
+
+/***** Principal *****/ 
+
+.principal {
+    margin: 1%;
+    padding: 2%;
+    background-color: rgb(0, 116, 170);
+    border-radius: 2%;
+}
+
+/***** End Principal *****/
+
+/***** Table *****/ 
+
+.nameTable {
+    background-color: whitesmoke;
+    border: solid 2px black;
+}
+
+.nameTable th {
+    text-decoration: solid;
+    order: solid 2px black;
+}
+
+.nameTable td {
+    border: solid 2px black;
+}
+
+/***** End Table *****/
+
+/***** Features *****/ 
+
+.features {
+    margin: 15px;
+    background-color: yellow;
+    display: flow-root;
+}
+
+.features p {
+    float: left;
+    width: 33%;
+    margin: 15px;
+}
+
+/***** End Features *****/
+
+/***** Kitty *****/
+
+.kitty{
+    margin: 20px;
+    border:solid 1px black;
+    overflow: auto;
+}
+
+.kitty img {
+    float:left;
+}
+
+/***** End Kitty *****/
