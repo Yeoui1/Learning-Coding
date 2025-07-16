@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/***** Content *****/  
+
+.content{
+    height: 10em;
+    width: 100%;
+    font-size: 1.5em;
+    color: white;
+    font-stretch: expanded;
+    text-shadow: 1px 1px black;
+    background-color: rgba(15, 15, 15, 0.6);
+    padding: 1em 8em;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-image: url(CIMG3125.JPG);
+    background-position: center;
+    background-size: cover;
+}
+
+/***** End Content *****/
