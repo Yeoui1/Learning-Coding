@@ -13,4 +13,4 @@ public class Solution8 {
             System.out.println(b * h);
         }
     }
-}
+} 
