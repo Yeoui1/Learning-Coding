@@ -30,7 +30,7 @@ public class Solution12 {
 			int n5=Integer.parseInt(br.readLine());
 			int n6=Integer.parseInt(br.readLine());
 
-			Add ob=new Add();
+			Add ob = new Add();
 			ob.add(n1,n2);
 			ob.add(n1,n2,n3);
 			ob.add(n1,n2,n3,n4,n5);	
