@@ -13,6 +13,8 @@ let puntuacion = 0;
 console.log(puntuacion);
 let intentos = 0;
 console.log(intentos);
+let usedNumbers = [];
+console.log (usedNumbers);
 
 function assignRange(minRange, maxRange) {
     minRange = parseInt(prompt ("Ingresa el rango mínimo para adivinar: "));
@@ -45,7 +47,17 @@ function assignRange(minRange, maxRange) {
 }
 
 function secretNumber() {
-    return Math.floor(Math.random()*(currentMax - currentMin + 1)) + currentMin;
+    let genNumber = Math.floor(Math.random()*(currentMax - currentMin + 1)) + currentMin;
+    if (usedNumbers.length == ((currentMax - currentMin) + 1 )) {
+        alert ("Felicidades, haz adivinado todos los números dentro del rango");
+    } else {
+        if (usedNumbers.includes(genNumber)) {
+            return secretNumber();
+        } else {
+            usedNumbers.push(genNumber);
+            return genNumber;
+        }
+    }
 }
 
 let numeroSecreto = secretNumber();
@@ -54,6 +66,7 @@ console.log(numeroSecreto);
 function verificarIntento () {
     let numeroUsuario = parseInt(document.getElementById('numberTryout').value);
     alert ("Haz iniciado el juego del numero secreto.\nTu puntuacion actual es: " + puntuacion + "\nLa puntuacion maxima es de 100.\nTienes " + (3 - intentos) + " intentos para superarla, suerte!!!");
+    document.getElementById().setAttribute('disabled', 'false');
     return secretGame(numeroUsuario);
 }
 
@@ -105,6 +118,15 @@ function endChecker() {
     } else {
         alert ("El juego prosigue");
     }
+}
+
+function resetGame () {
+    numeroSecreto = secretNumber();
+    puntuacion = 0;
+    intentos = 0;
+    playerGuess.value = "";
+    usedNumbers = [];
+    document.getElementById().setAttribute('disabled', 'true');
 }
                             /* 
                             ///
