@@ -1,0 +1,151 @@
+/***** Base Values *****/  
+
+:root{
+    --riddler-green:#0b6623; /* deep green */
+    --riddler-neon:#7fffd4; /* neon mint */
+    --accent-purple:#5b217b; /* purple accent */
+    --card-bg: rgba(0,0,0,0.35);
+    --glass: rgba(255,255,255,0.03);
+}
+
+html,body{
+    height:100%;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: radial-gradient( circle at 10% 10%, #053517 0%, var(--riddler-green) 40%, #071b11 100% );
+    color: #eafaf1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* Background using SVG */
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    /* SVG en data URI — nota que el '#' está codificado como %23 */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><text x='0' y='48' font-family='Cinzel, serif' font-size='48' fill='%237fffd4' opacity='0.10'>?</text></svg>");
+    background-repeat: repeat;
+    pointer-events: none;
+    /* screen/soft-light muestra mejor los detalles sobre fondos oscuros */
+    mix-blend-mode: screen;
+    /* controla visibilidad general del patrón (ajusta entre 0.0 y 1.0) */
+    opacity: 0.95;
+    z-index: 0;
+}
+
+/***** End Base Values *****/
+
+
+/***** Container *****/  
+
+.container-app{
+    min-height:100dvh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+}
+
+/***** End Container *****/
+
+
+/***** Contents Card *****/
+
+.riddler-card{
+    width:100%;
+    max-width:880px;
+    border-radius:1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.25));
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.02) inset;
+    padding:1.25rem;
+    border: 1px solid rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px) saturate(120%);
+    position: relative;
+    z-index: 2;
+}
+
+.riddler-header{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    margin-bottom:0.5rem;    
+}
+
+.logo-circle{
+    width:64px;height:64px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background: radial-gradient(circle at 30% 30%, var(--riddler-neon), rgba(255,255,255,0.06));
+    color: #082f17; font-weight:700; font-family: 'Cinzel', serif; font-size:30px;
+    border: 2px solid rgba(0,0,0,0.25);
+    transform: rotate(-12deg);
+    box-shadow: 0 6px 18px rgba(11,102,35,0.35);
+}
+
+h1.title{
+    margin:0; font-family:'Cinzel', serif; font-weight:700; letter-spacing:1px; color:var(--riddler-neon);
+    text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+    font-size:1.25rem;
+}
+
+p.subtitle{margin:0; color: rgba(234,250,241,0.8); font-size:0.9rem}
+
+/***** End Contents Card *****/
+
+
+/***** Input Area *****/  
+
+.input-row{margin-top:1rem; display:flex; gap:0.75rem; align-items:center}
+
+.form-control{
+    border-radius:0.75rem; height:48px; padding:0.6rem 1rem; box-shadow:none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    color: #e9fff5; border:1px solid rgba(127,255,212,0.08);
+}
+
+.btn-riddle{
+    border-radius:0.75rem; height:48px; padding:0 1.1rem; font-weight:600;
+    background: linear-gradient(90deg, var(--accent-purple), #3b0f53);
+    color:var(--riddler-neon); border: none; box-shadow: 0 6px 20px rgba(91,33,123,0.25);
+}
+
+.btn-riddle:active{transform:translateY(1px)}
+
+/***** End Input Area *****/
+
+
+/***** Friends Board *****/  
+
+#friendsLeaderboard{
+    margin-top:1rem; width:100%; border-collapse:collapse; overflow:hidden; border-radius:0.6rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.12));
+    border:1px solid rgba(127,255,212,0.06);
+}
+
+#friendsLeaderboard thead th{
+    text-align:left; padding:0.9rem 1rem; font-family:'Cinzel', serif; color:var(--riddler-neon); font-size:0.95rem;
+    border-bottom:1px dashed rgba(127,255,212,0.06);
+    background: linear-gradient(180deg, rgba(11,102,35,0.12), transparent);
+}
+
+#friendsLeaderboard tbody tr{
+    transition: transform .18s ease, background-color .18s ease; cursor:default;
+}
+
+#friendsLeaderboard tbody tr:hover{ transform: translateX(6px); background: rgba(255,255,255,0.02); }
+
+#friendsLeaderboard td{ padding:0.85rem 1rem; border-top:1px solid rgba(255,255,255,0.02); color:#e6fff6 }
+
+.empty-hint{ padding:1.1rem; color: rgba(234,250,241,0.7); text-align:center }
+
+/***** End Friends Board *****/
+
+
+/***** Breakpoint for Responsive *****/  
+
+@media (max-width:576px){
+    .riddler-header{gap:0.6rem}
+    h1.title{font-size:1rem}
+    .logo-circle{width:54px;height:54px;font-size:26px}
+}
+
+/***** End Breakpoint for Responsive *****/
