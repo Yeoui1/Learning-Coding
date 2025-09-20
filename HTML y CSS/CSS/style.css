@@ -1,0 +1,29 @@
+.dala {
+    background-color: red;
+}
+
+h1{
+            font-weight: bold;
+}
+
+span{
+            color: #22D4FD;
+            border: 1px solid #22D4FD;
+            padding: 10px;
+            text-decoration: none;
+            background-color: gray;
+            border-radius: 15px;
+}
+
+.container {
+    margin: 20%;    /* agrega un margen para centrar los cuadrados en la pantalla */
+    display: flex;    /* coloca los cuadrados uno al lado del otro */
+    gap: 10px;    /* agrega espacios iguales entre cada cuadrado */
+}
+
+section{
+    border-style: solid;    /* Crea un borde sólido */
+    border-color:red;   /* Colorea el borde con el color rojo*/
+    margin: 10%;    /* Agrega un margen alrededor de la section */
+    display: flex;  /* Agrega el display flex */
+}
