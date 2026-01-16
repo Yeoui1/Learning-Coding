@@ -4,8 +4,11 @@ public class Solution3 {
         @SuppressWarnings("ConvertToTryWithResources")
         public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("Enter an integer:");
         int i = scan.nextInt();
+        System.out.println("Enter a double:");
         double d = scan.nextDouble();
+        System.out.println("Enter a string:");
         scan.nextLine();
         String s = scan.nextLine();
 
