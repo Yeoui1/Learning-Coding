@@ -1,6 +1,6 @@
 import java.io.InputStream;
 
-public class App {
+public class m {
     public static void main(String[] args) throws Exception {
         InputStream name;
         name = System.in;
